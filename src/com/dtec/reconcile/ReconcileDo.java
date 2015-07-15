@@ -48,12 +48,18 @@ public class ReconcileDo {
 							if (columnValue == null || columnValue == "") {
 								checkRowCellIfNull(work,row,cell + i); 
 								work.getSheetAt(0).getRow(row)
-										.getCell(cell + i).setCellValue("0");
+										.getCell(cell + i).setCellValue("");
 							} else {
 								checkRowCellIfNull(work,row,cell + i); 
-								work.getSheetAt(0).getRow(row)
-										.getCell(cell + i)
-										.setCellValue(columnValue);
+								try{
+									work.getSheetAt(0).getRow(row)
+									.getCell(cell + i)
+									.setCellValue(Double.parseDouble(columnValue));
+								}catch(Exception e){
+									work.getSheetAt(0).getRow(row)
+									.getCell(cell + i)
+									.setCellValue(columnValue);
+								}
 							}
 						}
 						row++;

@@ -31,7 +31,7 @@ public class ReconsileService {
 		try {
 
 			connection = DriverManager.getConnection(
-					"jdbc:oracle:thin:@10.200.111.18:1521:cisdmdev1", "vm1dta",
+					"jdbc:oracle:thin:@cisx-scan.muangthai.co.th:1521:cisdmdev1", "vm1dta",
 					"vmldta1819");
 
 		} catch (SQLException e) {
